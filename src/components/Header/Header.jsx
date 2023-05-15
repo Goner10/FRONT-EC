@@ -18,19 +18,15 @@ function Header() {
               </li>
               <li className="header-item">
                 <Link to="/ropa" className="nav-link">
-                  Ropa
+                  Clothes
                 </Link>
               </li>
               <li className="header-item">
-                <Link to="/zapatillas" className="nav-link">
-                  Zapatillas
+                <Link to="/bio" className="nav-link">
+                  Bio
                 </Link>
               </li>
-              <li className="header-item">
-                <Link to="/accesorios" className="nav-link">
-                  Accesorios
-                </Link>
-              </li>
+          
            
             </ul>
           </nav>

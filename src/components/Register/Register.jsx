@@ -1,100 +1,87 @@
-/* import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { registerUser } from "../../api/auth";
-import { AuthContext } from "../../context/AuthContext";
+  import React, { useState, useContext } from 'react';
+  import { Button, Form, Input, notification } from 'antd';
+  import { useNavigate } from 'react-router-dom';
+  import { UserContext } from '../../context/userContext/userState';
+  import './Register.scss'
 
-const Register = () => {
-  const initialState = {
-    name: "",
-    email: "",
-    password: "",
-    password2: ""
+  const Register = () => {
+    const { register } = useContext(UserContext);
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({});
+
+    const onFinish = (values) => {
+      register(values)
+      .then(() => {
+        notification.success({
+         message: 'Registro exitoso', 
+        });
+        navigate('/login');
+      })
+      .catch((error) => {
+        notification.error({
+          message: 'Error en el registro',
+          description: error.message,
+        });
+      });
+    };
+
+    const onFinishFailed = (errorInfo) => {
+      console.log('Failed:', errorInfo);
+    };
+
+    return (
+      <div className="register-container">
+        <h2>Register</h2>
+        <Form
+          name="basic"
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 16 }}
+          style={{ maxWidth: 600 }}
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
+        >
+          <Form.Item
+            label="Name"
+            name="name"
+            rules={[{ required: true, message: 'Por favor ingresa tu nombre' }]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            label="Email"
+            name="email"
+            rules={[
+              { required: true, message: 'Por favor ingresa tu dirección de correo electrónico' },
+              { type: 'email', message: 'Por favor ingresa un email válido' },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            label="Password"
+            name="password"
+            rules={[
+              { required: true, message: 'Por favor ingresa tu contraseña' },
+              { min: 6, message: 'La contraseña debe tener al menos 6 caracteres' },
+            ]}
+          >
+            <Input.Password />
+          </Form.Item>
+
+          <Form.Item
+            wrapperCol={{ offset: 8, span: 16 }}
+          >
+            <Button type="primary" htmlType="submit">
+              Register
+            </Button>
+          </Form.Item>
+        </Form>
+      </div>
+    );
   };
 
-  const [formData, setFormData] = useState(initialState);
-  const [error, setError] = useState(null);
-
-  const { user, setUser } = useContext(AuthContext);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (user) {
-      navigate("/login");
-    }
-  }, [user, navigate]);
-
-  const onChange = (e) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value
-    }));
-  };
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    if (formData.password !== formData.password2) {
-      setError("Passwords do not match");
-      return;
-    }
-    try {
-      const { name, email, password } = formData;
-      const userData = {
-        name,
-        email,
-        password
-      };
-      const response = await registerUser(userData);
-      setUser(response.data.user);
-      setFormData(initialState);
-    } catch (error) {
-      setError(error.response.data.message);
-    }
-  };
-
-  return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          placeholder="Name"
-          onChange={onChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          placeholder="E-mail"
-          onChange={onChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          placeholder="Password"
-          onChange={onChange}
-          required
-        />
-        <input
-          type="password"
-          name="password2"
-          value={formData.password2}
-          placeholder="Confirm password"
-          onChange={onChange}
-          required
-        />
-        <button type="submit">Register</button>
-      </form>
-      {error && <p>{error}</p>}
-      <p>Already have an account?</p>
-      <Link to="/login">Log in!</Link>
-    </div>
-  );
-};
-
-export default Register;
-
-*/
+  export default Register;

@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from 'react'
 import { Button, Form, Input, notification } from "antd";
 import { UserContext } from '../../context/userContext/userState';
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import './Login.scss'
 
 
@@ -32,6 +33,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
+       <h2>Login</h2>
       <Form
         name="basic"
         labelCol={{
@@ -82,10 +84,16 @@ const Login = () => {
           }}
         >
           <Button type="primary" htmlType="submit">
-            Submit
+            Enter
           </Button>
         </Form.Item>
       </Form>
+      <div>
+        <p>
+        You don't have an account?{' '}
+          <Link to="/register">Sign up</Link> {/* Enlace para registrarse */}
+        </p>
+      </div>
     </div>
   )
 }

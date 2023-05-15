@@ -7,6 +7,7 @@ const token = JSON.parse(localStorage.getItem("token"));
 const initialState= {
     token: token ? token : null,
     user: null,
+    message: null,
 }
 
 const API_URL = "http://localhost:3000";
@@ -15,7 +16,19 @@ export const UserContext = createContext(initialState);
 
 export const UserProvider = ({ children }) => {
     const [state, dispatch] = useReducer(UserReducer, initialState);
-  
+
+    const register = async (user) => {
+      const res = await axios.post(API_URL + "/clients/createClient", user);
+      dispatch({
+        type: 'REGISTER',
+        payload: res.data,
+      });
+      if (res.data) {
+        localStorage.setItem('token', JSON.stringify(res.data.token));
+      }
+    };
+   
+   
     const login = async (user) => {
       const res = await axios.post(API_URL + "/clients/login", user);
       dispatch({
@@ -32,6 +45,7 @@ export const UserProvider = ({ children }) => {
             token: state.token,
             user: state.user,
             message: state.message,
+            register,
             login,
           }}
         >
