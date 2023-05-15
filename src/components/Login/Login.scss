@@ -1,8 +1,13 @@
-.login-container {
-    border: 1.5px solid black;
-    padding: 60px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
 
-  
+
+.login-container {
+  padding: 70px;
+  max-width: 600px;
+  margin: 40px auto; /* Ajusta el valor de margen superior e inferior según necesites */
+}
+
+.login-form-container {
+  padding: 50px;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+}

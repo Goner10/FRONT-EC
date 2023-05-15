@@ -32,6 +32,7 @@
     return (
       <div className="register-container">
         <h2>Register</h2>
+        <div className="register-form-container">
         <Form
           name="basic"
           labelCol={{ span: 8 }}
@@ -80,6 +81,7 @@
             </Button>
           </Form.Item>
         </Form>
+      </div>
       </div>
     );
   };

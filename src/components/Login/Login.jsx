@@ -34,6 +34,7 @@ const Login = () => {
   return (
     <div className="login-container">
        <h2>Login</h2>
+       <div className="login-form-container">
       <Form
         name="basic"
         labelCol={{
@@ -95,6 +96,8 @@ const Login = () => {
         </p>
       </div>
     </div>
+    </div>
+  
   )
 }
 

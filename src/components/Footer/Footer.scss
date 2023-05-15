@@ -1,20 +1,67 @@
+.footer {
+  font-family: Arial, sans-serif;
+  padding-top: 23px;
+}
+
 .footer-container {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    align-items: center;
-    bottom: 0;
-    height: 60px;
-  }
-  
-  .social-icon {
-    display: inline-block;
-    margin: 0 15px; /* Ajusta este valor para aumentar o disminuir la separación */
-    font-size: 34px; 
-    color: black;
-  }
-  
-  .social-icon:hover {
-    opacity: 0.7;
-    color: green;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: 0;
+  height: 60px;
+}
+
+.social-icons-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 15px;
+  font-size: 34px;
+  color: black;
+}
+
+.social-icon:hover {
+  opacity: 0.7;
+  color: green;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-item {
+  margin-bottom: 5px;
+}
+
+.footer-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 14px ;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  margin-top: 10px; /* Espacio entre los logos y los h4 */
+}
+
+.footer-content h4 {
+  margin: 0;
+}
+
+.footer-left,
+.footer-right {
+  text-align: center; /* Centra el texto horizontalmente */
+  flex: 1; /* Toma el espacio disponible por igual */
+}
+

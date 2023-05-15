@@ -1,9 +1,16 @@
 .register-container {
-    border: 1.5px solid black;
-    padding: 50px;
+    padding: 70px;
     max-width: 600px;
-}
-
-h2{
+    margin: 40px auto; /* Ajusta el valor de margen superior e inferior según necesites */
+  }
+  
+  .register-form-container {
+    padding: 50px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  h2 {
     font-family: 'Courier New', Courier, monospace;
-}
+  }
+  
