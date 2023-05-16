@@ -42,6 +42,20 @@ export const UserProvider = ({ children }) => {
       }
     };
 
+
+    const getUserInfo= async() =>{
+      const token = JSON.parse(localStorage.getItem("token"))
+      const res =await axios.get(`${API_URL}/clients/getInfoClient`, {
+        headers:{
+          Authorization:token
+        }
+      })
+      console.log(res.data)
+      dispatch({
+        type:"GET_USER_INFO",
+        payload:res.data
+      })
+    }
     
    
     const logout = async () => {
@@ -71,6 +85,7 @@ export const UserProvider = ({ children }) => {
             message: state.message,
             register,
             login,
+            getUserInfo,
             logout,
           }}
         >

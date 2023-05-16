@@ -8,6 +8,7 @@ import Ropa from './components/Ropa/Ropa'
 import Footer from "./components/Footer/Footer";
 import Register from "./components/Register/Register";
 import Login from './components/Login/Login'
+import Profile from "./components/Profile/Profile";
 
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/ropa" element={<Ropa />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
           < Footer />
         </UserProvider>

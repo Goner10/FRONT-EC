@@ -11,6 +11,15 @@ const userReducer = (state, action) => {
         ...state,
         message: action.payload.message,
       };
+      case "GET_USER_INFO":
+        return {
+          ...state,
+          user: {
+            full_name: action.payload.full_name,
+            email: action.payload.email,
+          },
+        };
+
       case "LOGOUT":
       return {
         ...state,
