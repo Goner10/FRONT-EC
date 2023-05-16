@@ -1,7 +1,7 @@
   import React, { useState, useContext } from 'react';
   import { Button, Form, Input, notification } from 'antd';
   import { useNavigate } from 'react-router-dom';
-  import { UserContext } from '../../context/userContext/userState';
+  import { UserContext } from '../../context/UserContext/UserState';
   import './Register.scss'
 
   const Register = () => {
@@ -45,7 +45,7 @@
         >
           <Form.Item
             label="Name"
-            name="name"
+            name="full_name"
             rules={[{ required: true, message: 'Por favor ingresa tu nombre' }]}
           >
             <Input />

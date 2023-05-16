@@ -48,7 +48,7 @@ function Footer() {
             <Link to="/about" className="footer-link">About</Link>
           </li>
           <li>
-            <Link to="/blog" className="footer-link">Blog</Link>
+            <Link to="/bio" className="footer-link">Blog</Link>
           </li>
           <li>
             <Link to="/privacy" className="footer-link">Privacy Policy</Link>

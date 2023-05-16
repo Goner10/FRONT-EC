@@ -7,7 +7,7 @@ const token = JSON.parse(localStorage.getItem("token"));
 const initialState= {
     token: token ? token : null,
     user: null,
-    message: null,
+    message: "",
 }
 
 const API_URL = "http://localhost:3000";
@@ -17,6 +17,7 @@ export const UserContext = createContext(initialState);
 export const UserProvider = ({ children }) => {
     const [state, dispatch] = useReducer(UserReducer, initialState);
 
+    
     const register = async (user) => {
       const res = await axios.post(API_URL + "/clients/createClient", user);
       dispatch({
@@ -29,6 +30,7 @@ export const UserProvider = ({ children }) => {
     };
    
    
+   
     const login = async (user) => {
       const res = await axios.post(API_URL + "/clients/login", user);
       dispatch({
@@ -39,6 +41,28 @@ export const UserProvider = ({ children }) => {
         localStorage.setItem("token", JSON.stringify(res.data.token));
       }
     };
+
+    
+   
+    const logout = async () => {
+      const token = JSON.parse(localStorage.getItem("token"));
+      const res = await axios.delete(API_URL + "/clients/logout",  
+      {
+        headers: {
+          authorization: token,
+        },
+      });
+      dispatch({
+        type: "LOGOUT",
+        payload: res.data,
+      });
+      if (res.data) {
+        localStorage.removeItem("token");
+      }
+    };
+   
+  
+
     return (
         <UserContext.Provider
           value={{
@@ -47,6 +71,7 @@ export const UserProvider = ({ children }) => {
             message: state.message,
             register,
             login,
+            logout,
           }}
         >
           {children}

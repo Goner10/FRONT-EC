@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.scss'
-import { UserProvider } from "./context/userContext/userState";
+import { UserProvider } from "./context/UserContext/UserState";
 
 import Home from './components/Home/Home'
 import Header from "./components/Header/Header";
@@ -17,8 +17,8 @@ function App() {
     <>
 
       <BrowserRouter>
-        <Header />
         <UserProvider>
+        <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/ropa" element={<Ropa />} />
