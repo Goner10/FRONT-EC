@@ -55,6 +55,20 @@ function Footer() {
           </li>
         </ul>
       </div>
+      <div className='footer-right'>
+        <h4>Account</h4>
+        <ul className="footer-list">
+          <li>
+            <Link to="/login" className="footer-link">Sign In/Join</Link>
+          </li>
+          <li>
+            <Link to="/bio" className="footer-link">Lost Password</Link>
+          </li>
+          <li>
+            <Link to="/bag" className="footer-link">View Orders</Link>
+          </li>
+        </ul>
+      </div>
              
       </div>
     </footer>

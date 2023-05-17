@@ -1,55 +1,58 @@
 .home-container {
-    position: relative;
-    height: 100vh; /* altura del viewport */
-    width: 100vw; /* ancho del viewport */
-    background-size: cover; 
-    background-image: url('../../assets/img/tia5.jpg');
-  }
-  
-  .home-container h2 {
-    position: absolute;
-    top: 40%; /* posición vertical del título */
-    left: 40%; /* posición horizontal del título */
-    transform: translate(-50%, -50%); /* centrar el título */
-    z-index: 1; /* asegurar que el título esté encima de la imagen */
-    color: black; /* color del texto */
-    text-align: center; /* centrar el texto */
-    background-color: #ffffffff;
-    border-radius: 5%;
-    padding: 1%;
-  }
-  .home-container img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  
-  }
-  .home-container h1 {
-    position: absolute;
-    top: 40%;
-    left: 60%;
-    transform: translate(-140%, -70%);
-    color: #272727;
-    font-family: cursive;
-  }
-
-  
-  .home-container h2 {
-    position: absolute;
-    top: 60%;
-    left: 45%;
-    transform: translate(-140%, -70%); 
-    box-shadow:2px 2px 4px rgba(0,0,0,0.5);
-  }
-  .home-container h2:hover {
-    text-decoration: underline;
+  position: relative;
+  height: 100vh; /* altura del viewport */
+  width: 100vw; /* ancho del viewport */
+  background-size: cover; 
+  background-image: url('../../assets/img/tia5.jpg');
 }
-  .home-container .start {
-    display: block;
-    font-size: 2.5rem;
-  }
-  
-  .home-container .shop {
-    display: block;
-    font-size: 5rem;
-  }
+
+.home-container h2 {
+  position: absolute;
+  top: 40%; /* posición vertical del título */
+  left: 40%; /* posición horizontal del título */
+  transform: translate(-50%, -50%); /* centrar el título */
+  z-index: 1; /* asegurar que el título esté encima de la imagen */
+  color: black; /* color del texto */
+  text-align: center; /* centrar el texto */
+  background-color: #ffffffff;
+  border-radius: 10%;
+  padding: 1%;
+}
+.home-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
+
+.home-container h1 {
+  position: absolute;
+  top: 40%;
+  left: 60%;
+  transform: translate(-140%, -70%);
+  color: #272727;
+  font-family: cursive;
+}
+
+
+.home-container h2 {
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  transform: translate(-140%, -70%); 
+  box-shadow:2px 2px 4px rgba(0,0,0,0.5);
+}
+.home-container h2:hover {
+  text-decoration: underline;
+}
+.home-container .start {
+  display: block;
+  font-size: 2.5rem;
+}
+
+.home-container .shop {
+  display: block;
+  font-size: 5rem;
+}

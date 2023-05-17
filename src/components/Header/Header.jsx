@@ -1,10 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Header.scss';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext/UserState';
+import { ProductsContext } from '../../context/ProductsContext/ProductsState';
+import { Badge } from 'antd';
 
 function Header() {
   const { token, logout } = useContext(UserContext);
+  const { cart } = useContext(ProductsContext);
+
+  useEffect(()=>{
+localStorage.setItem("cart", JSON.stringify(cart))
+  },[cart])
 
 
   return (
@@ -44,12 +51,14 @@ function Header() {
                 <>
                   <li className="header-item">
                     <Link to="/profile" className="nav-link">
-                      👽
+                    👽
                     </Link>
                   </li>
                   <li className="header-item">
                     <Link to="/bag" className="nav-link">
-                      👜
+                    <Badge count={cart.length}>
+                    🛒
+                    </Badge>
                     </Link>
                   </li>
                   <li className="header-item"onClick={logout}>

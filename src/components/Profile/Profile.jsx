@@ -10,7 +10,7 @@ const Profile = () => {
         getUserInfo();
     }, []);
     return <div className="profile">
-            <Card
+            <Card className="card"
       title="Profile"
       extra={<a href="#">More</a>}
       style={{
