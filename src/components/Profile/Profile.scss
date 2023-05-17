@@ -10,8 +10,46 @@
       }
 
       .card{
+        padding-top: 10px;
         border-color: black;
+        font-family:cursive;
+        font-size: 19px;
+        background-color: #fff6ed;
       }
+
+      .custom-collapse {
+      font-family: cursive;
+      }
+
+      .custom-collapse .ant-collapse-item {
+        margin-bottom: 20px; /* Añade espacio inferior entre los registros de venta */
+      }
+      
+      .custom-collapse .ant-collapse-header {
+        background-color: #fff; /* Cambia el color de fondo del encabezado */
+        font-weight: bold; /* Aplica un estilo de fuente en negrita */
+        padding: 10px; /* Añade un espacio interno al encabezado */
+        border: 1px solid black; 
+        background-color: #fdecda;
+      }
+      
+      .custom-collapse .ant-collapse-content {
+        border: 1px solid black; 
+        padding: 10px; /* Añade un espacio interno al contenido */
+        background-color: #fff6ed; 
+        font-size: 17px;
+      }
+      
+      .custom-collapse .ant-collapse-content > .ant-collapse-content-box {
+        margin-top: 5px; /* Añade espacio superior dentro del contenido */
+      }
+      
+      .custom-collapse .ant-collapse-content p {
+        margin-bottom: 5px; /* Añade espacio inferior entre los párrafos dentro del contenido */
+      }
+
+    
+     
 
 
 

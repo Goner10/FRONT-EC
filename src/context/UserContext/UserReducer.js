@@ -14,10 +14,7 @@ const userReducer = (state, action) => {
       case "GET_USER_INFO":
         return {
           ...state,
-          user: {
-            full_name: action.payload.full_name,
-            email: action.payload.email,
-          },
+          user: action.payload.client
         };
 
       case "LOGOUT":

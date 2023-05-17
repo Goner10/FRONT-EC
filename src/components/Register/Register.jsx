@@ -1,7 +1,9 @@
   import React, { useState, useContext } from 'react';
-  import { Button, Form, Input, notification } from 'antd';
+  import { Button, Form, Input, notification, DatePicker } from 'antd';
   import { useNavigate } from 'react-router-dom';
   import { UserContext } from '../../context/UserContext/UserState';
+  
+
   import './Register.scss'
 
   const Register = () => {
@@ -50,6 +52,16 @@
           >
             <Input />
           </Form.Item>
+
+          <Form.Item
+        label="Fecha de Nacimiento"
+        name="birth_date"
+        rules={[
+      { required: true, message: 'Por favor ingresa tu fecha de nacimiento' },
+    ]}
+ >
+  <DatePicker format="YYYY-MM-DD" />
+</Form.Item>
 
           <Form.Item
             label="Email"

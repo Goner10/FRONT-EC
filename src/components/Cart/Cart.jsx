@@ -20,8 +20,8 @@ const Cart = () => {
         });
     }
 
-    if(!cart.length < 0){
-        return <Empty description={<span>No products</span>} />;
+    if(cart.length < 1){
+        return <Empty  className="empty" description={<span>No products</span>} />;
     }
   return (
     <div className='cart-container'>{cart.map(product =>{

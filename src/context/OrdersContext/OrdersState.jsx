@@ -18,7 +18,7 @@ export const OrdersProvider = ({ children }) => {
       }
 
     try {
-    await axios.post(API_URL + "/sales/createSale", {productIds:order},
+    await axios.post(API_URL + "/sales/createSale", {ProductId:productIds},
     {
     headers: {
     authorization: token,

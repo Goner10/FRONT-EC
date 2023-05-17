@@ -14,21 +14,26 @@
     border: 1.5px solid black;
     margin-bottom: 10px;
     border-radius: 20px;
+    font-family: cursive;
+    background-color: #fff6ed;
+    
   }
   
   .cart-buttons {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    
   }
   
   .clear-button,
   .order-button {
     padding: 10px 20px;
     margin: 0 10px;
-    background-color: wheat;
+    background-color: #eaccad;
     color: #fff;
     border: none;
+    border:1.5px solid black;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
@@ -36,9 +41,30 @@
 
   .order-button,
   .clear-button:hover {
-    background-color: #d32f2f;
+    background-color: #834f23;
     transition: transform 1s ease;
     transform: scale(1.2);
   }
 
   
+.empty{
+  border:1px solid black ;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border: 1.5px solid black;
+  border-radius: 20px;
+  background-color: #fff6ed;
+  animation: rotate 3s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); /* Inicio de la rotación */
+  }
+  to {
+    transform: rotate(360deg); /* Final de la rotación */
+  }
+}
+
