@@ -20,5 +20,56 @@ Descripción 📋
  Vista de algunos elementos de la pagina 🔍
 ---
 
-<h4>Inicio:</h4>
-![](https://github.com/Goner10/FRONT-EC/blob/main/VistaWEB.png)
+<h3>La biografia:</h3>
+<br>
+<br>
+<img src="https://github.com/Goner10/FRONT-EC/blob/main/bioWEB.png" alt="Imagen">
+<br>
+
+<h3>El inicio:</h3>
+<br>
+<br>
+<img src="https://github.com/Goner10/FRONT-EC/blob/main/VistaWEB.png" alt="Imagen">
+<br>
+
+<h3>Cards de los productos:</h3>
+<br>
+<br>
+<img src="https://github.com/Goner10/FRONT-EC/blob/main/ProductWEB.png" alt="Imagen">
+<br>
+
+Tecnologias 🛠
+---
+* React
+* Vite (React)
+* Ant Design 
+* React Icons
+* Axios 
+* React Router DOM
+
+
+Instalación ⚙️
+---
+1. **Clona el repositorio 🔧**
+
+```
+https://github.com/Goner10/FRONT-EC
+ ```
+ 
+2. **Instala las dependencias 🚀**
+ 
+ ```
+ npm install
+ ```
+ 
+
+4. **Levanta el servidor (tambien en la base de datos 📦)**
+
+```
+npm run dev
+```
+
+Autor 🧑‍✒️
+---
+
+* Gonzalo Martí - [goner10](https://github.com/Goner10)
